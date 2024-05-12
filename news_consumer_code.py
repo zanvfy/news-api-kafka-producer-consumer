@@ -4,7 +4,7 @@ import csv
 from kafka import KafkaConsumer
 import csv
 
-file_path = '/home/contentwrito/assignment/midterm/article_data.csv'
+file_path = './article_data.csv'
 
 # Initialize Kafka consumer
 consumer = KafkaConsumer(

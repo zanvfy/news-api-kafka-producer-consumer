@@ -5,11 +5,18 @@ from kafka import KafkaProducer
 from newsapi import NewsApiClient
 import logging
 
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+# Set the API key from the environment variable
+NEWS_API_KEY = os.getenv('NEWS_API_KEY')
+
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Initialize News API client
-newsapi = NewsApiClient(api_key='7d67c637cefd44e9bb8e8609604e9874')
+newsapi = NewsApiClient(api_key=NEWS_API_KEY)
 
 # Define the list of media sources
 sources = 'bbc-news,cnn,fox-news,nbc-news,the-guardian-uk,the-new-york-times,the-washington-post,usa-today'
